@@ -1,89 +1,90 @@
-# SDhash Python Wrapper
+# jc_sdhash - SDHash Python Wrapper
 
-
-# SDHash Python Wrapper
-
-This Python package is a wrapper for the **SDHash** binary, providing a convenient way to generate and compare SDBF hashes from Python. **Note: This package only works on Linux.**
+This Python package provides a simple, functional wrapper for the **SDHash** binary, allowing you to generate and compare SDBF hashes directly from Python. **Note: This package only works on Linux.**
 
 ## Installation
 
-To install the `sdhash_wrapper` package, you can either install it from PyPI (if it’s available there) or from the source.
+You can install `jc_sdhash` either from PyPI or from the source.
 
 ### Option 1: Install from PyPI
 ```bash
-pip install sdhash_wrapper
+pip install jc_sdhash
 ```
-
-###  Option 2: Install from Source
-Clone the repository and install it manually:
-
-```bash
-git clone https://github.com/yourusername/sdhash_wrapper.git
-cd sdhash_wrapper
-pip install .
-```
-
-
-Make sure you have the necessary dependencies installed, including the sdhash binary, which should be included in the package.
 
 Usage
+The package provides a functional API, similar to ssdeep. Import it as jc_sdhash and use its functions directly.
+
 Importing the Package
 ```python
-from sdhash_wrapper.wrapper import SDHash
+import jc_sdhash as sd
 ```
-
-#### Generate an SDBF Hash
-You can generate an SDBF hash for a file using the generate() method. The method accepts two arguments:
-
-filepath: Path to the file you want to hash.
-output_filepath (optional): Path where the SDBF hash will be saved.
-
-
-#### Example 1: Generate Hash and Save to File
+Usage Options
+Option 1: Generate an SDBF Hash and Print to Console
+Generate a hash for a file and print it to standard output:
 
 ```python
+import jc_sdhash as sd
+# Generate the SDBF hash for a file
+result = sd.generate("inputfile.txt")
+print(result)
+```
 
-# Initialize SDHash
-sdhash = SDHash()
+Option 2: Generate an SDBF Hash and Save to File
+Generate a hash and save it to a specified output file:
 
-# Specify output file for the SDBF hash
-output_file = "output.sdbf"
-
-# Generate the SDBF hash and save to the specified output file
-sdhash.generate("inputfile.txt", output_filepath=output_file)
+```python
+import jc_sdhash as sd
+# Generate the SDBF hash and save it to "output.sdbf"
+sd.generate("inputfile.txt", output_filepath="output.sdbf")
 
 ```
 
-#### Example 2: Generate Hash Without Specifying Output File
-If you don't specify the output file, the result will be printed to the standard output:
+Option 3: Compare Two SDBF Hash Files
+Compare two SDBF files and print the similarity score:
 
 ```python
-
-# Initialize SDHash
-sdhash = SDHash()
-# Generate the SDBF hash without specifying an output file
-sdhash.generate("inputfile.txt")
-```
-#### Compare SDBF Hashes
-To compare two SDBF files, you can use the compare() method. Here’s how to use it:
-
-```python
+import jc_sdhash as sd
 
 # Compare two SDBF files
-sdhash.compare("file1.sdbf", "file2.sdbf")
-
+result = sd.compare("file1.sdbf", "file2.sdbf")
+print(result)
 ```
 
-### Requirements
-Python 3.6+
-Linux-based OS (this package only works on Linux)
-sdhash binary (included in the package)
-Access to the required input files for hashing
+Option 4: Validate an SDBF File
+Validate the integrity of an SDBF file:
+```python
+import jc_sdhash as sd
 
+# Validate an SDBF file
+result = sd.validate("file1.sdbf")
+print(result)
+```
+ Function Details
 
-### Troubleshooting
-If you encounter issues such as missing binaries or permission errors:
+### `generate(filepath, output_filepath=None)`
+Generates an SDBF hash for the given file.  
+If `output_filepath` is provided, the hash is saved there; otherwise, it’s returned as a string.
 
-Ensure the sdhash binary is located in the correct directory (sdhash_wrapper/sdhash).
-Verify that you have the necessary permissions to read/write to the input/output files.
-If the command fails with a non-zero exit code, check the standard error output for more details about the failure.
+### `compare(file1, file2)`
+Compares two SDBF files and returns the similarity score as a string.
+
+### `validate(sdbf_file)`
+Validates an SDBF file and returns the result as a string.
+
+---
+
+# Requirements
+
+- **Python 3.6+**
+- **Linux-based OS** (this package only works on Linux)
+- **The `sdhash` binary** (included in the package)
+- **Read access to input files and write access for output files** (if saving hashes)
+
+---
+
+# Troubleshooting
+
+### Missing Binary  
+If you get a `FileNotFoundError`, ensure the `sdhash` binary is in the `jc_sdhash/` directory and executable:  
+```sh
+chmod +x jc_sdhash/sdhash
