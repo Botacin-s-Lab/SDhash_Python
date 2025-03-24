@@ -1,0 +1,26 @@
+Metadata-Version: 2.4
+Name: sdhash_wrapper
+Version: 0.1.3
+Summary: A Python wrapper for SDHash binary.
+Home-page: https://github.com/Botacin-s-Lab/SDhash_Python
+Author: Mabon Ninan
+Author-email: mabonmn2002@gmail.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: license-file
+Dynamic: requires-python
+Dynamic: summary
+
+# SDhash_Python

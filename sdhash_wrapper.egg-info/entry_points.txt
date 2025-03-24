@@ -1,0 +1,2 @@
+[console_scripts]
+sdhash-python = sdhash_wrapper.wrapper:SDHash
