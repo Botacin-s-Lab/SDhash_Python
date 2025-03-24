@@ -9,4 +9,4 @@ services:
     cpuset: "64"  # Limits to 10 cores
     container_name: sdhash
     volumes:
-      - /home/mabon/research/Autoyara/SDhash_Python:/usr/src/app/SDhash_Python
+      - /home/mabon/research/Autoyara/SDhash_Python:/usr/src/app/

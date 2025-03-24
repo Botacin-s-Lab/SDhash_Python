@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+jc_sdhash/__init__.py
+jc_sdhash/sdhash
+jc_sdhash/wrapper.py
+jc_sdhash.egg-info/PKG-INFO
+jc_sdhash.egg-info/SOURCES.txt
+jc_sdhash.egg-info/dependency_links.txt
+jc_sdhash.egg-info/top_level.txt
