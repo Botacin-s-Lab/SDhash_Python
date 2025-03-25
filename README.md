@@ -88,3 +88,11 @@ Validates an SDBF file and returns the result as a string.
 If you get a `FileNotFoundError`, ensure the `sdhash` binary is in the `jc_sdhash/` directory and executable:  
 ```sh
 chmod +x jc_sdhash/sdhash
+```
+
+# Future 
+## Supported Architectures
+This project works with x64 architectures. Our goal is to extend support for x86, enable compatibility with Windows, and other platforms.
+
+# Contributions
+We are actively seeking contributions to achieve these goals. If you're interested in helping us add x86 support, Windows compatibility, or other improvements, feel free to open a Pull Request (PR).
