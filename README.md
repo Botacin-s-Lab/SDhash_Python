@@ -2,6 +2,9 @@
 
 This Python package provides a simple, functional wrapper for the **SDHash** binary, allowing you to generate and compare SDBF hashes directly from Python. **Note: This package only works on Linux.**
 
+## Offical Link💾 
+[PYPi](https://pypi.org/project/jc-sdhash/#description)
+
 ## Installation
 
 You can install `jc_sdhash` either from PyPI or from the source.
